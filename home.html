@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Elderly Care Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #3a7bd5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #3a7bd5, #3a6073);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #e65c00;
+        }
+
+        .services {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .logout-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logout-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #d9534f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        Elderly Care Platform
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="users.php">Users</a>
+        <a href="employee.php">Employees</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Compassionate Care for Your Loved Ones</h1>
+        <p>Connecting families with professional caregivers for reliable and transparent elderly care.</p>
+        <button onclick="location.href='contact.html'">Get Started</button>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="caregiver.png" alt="Caregiver">
+                <h3>Professional Caregivers</h3>
+                <p>Qualified and experienced caregivers to assist with daily needs.</p>
+            </div>
+            <div class="card">
+                <img src="gps.png" alt="Tracking">
+                <h3>Real-Time Tracking</h3>
+                <p>Monitor caregiver location with GPS for transparency and security.</p>
+            </div>
+            <div class="card">
+                <img src="chat.png" alt="Communication">
+                <h3>Secure Communication</h3>
+                <p>Chat and video call features to stay connected with caregivers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logout Section -->
+    <section class="logout-section">
+        <h2>Logout</h2>
+        <button class="logout-button" onclick="window.location.href='http://localhost:8080/elder%20care/login.php'">Logout</button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Elderly Care Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function logout() {
+            alert("You have been logged out successfully.");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

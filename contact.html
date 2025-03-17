@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us with Video Call</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('11.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border: 5px solid #3a7bd5;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-btn, .video-btn, .google-meet-btn {
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .contact-btn:hover, .video-btn:hover, .google-meet-btn:hover {
+            background-color: #34495e;
+        }
+
+        #video-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        video {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Feel free to reach out.</p>
+</header>
+
+<section class="contact-container">
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h2>Our Contact Details</h2>
+        <p><strong>📞 Phone:</strong> 112659563</p>
+        <p><strong>📧 Email:</strong> eldercare01@gmail.com</p>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="#" method="POST" class="contact-form">
+        <h2>Send Us a Message</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+
+    <!-- Video Call Button -->
+    <button class="video-btn" onclick="startVideoCall()">Start Video Call</button>
+
+    <!-- Google Meet Button -->
+    <button class="google-meet-btn" onclick="openGoogleMeet()">Join Google Meet</button>
+
+    <div id="video-container">
+        <h2>Video Call</h2>
+        <video id="localVideo" autoplay></video>
+    </div>
+</section>
+
+<script>
+    // Start Video Call using WebRTC
+    function startVideoCall() {
+        const videoContainer = document.getElementById('video-container');
+        const localVideo = document.getElementById('localVideo');
+
+        videoContainer.style.display = 'block';  // Show video container
+
+        // Access user's webcam and start streaming
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(stream => {
+                localVideo.srcObject = stream;
+            })
+            .catch(error => {
+                console.error('Error accessing webcam:', error);
+                alert('Unable to access webcam. Please check your settings.');
+            });
+    }
+
+    // Open Google Meet in a new tab
+    function openGoogleMeet() {
+        window.open('https://meet.google.com/', '_blank');
+    }
+</script>
+
+</body>
+</html>
